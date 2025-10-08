@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:spinwheel/feature/commons/colors.dart';
 
 class SpinWheelScreen extends StatefulWidget {
   const SpinWheelScreen({super.key});
@@ -159,7 +160,7 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
       context: context,
       builder: (_) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        backgroundColor: Colors.white,
+        backgroundColor: Appcolors.white,
         title: Row(
           children: [
             Icon(Icons.timer_off, color: Colors.orange[700], size: 30),
@@ -186,7 +187,7 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
             child: Text(
               "Got it!",
               style: GoogleFonts.poppins(
-                color: Colors.deepPurple,
+                color: Appcolors.primaryColor,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -229,7 +230,7 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Appcolors.white,
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
@@ -251,7 +252,7 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
                 style: GoogleFonts.poppins(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: Appcolors.white,
                 ),
               ),
               const SizedBox(height: 10),
@@ -266,7 +267,7 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Appcolors.white,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
@@ -275,7 +276,7 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
                   style: GoogleFonts.poppins(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+                    color: Appcolors.primaryColor,
                   ),
                 ),
               ),
@@ -285,8 +286,8 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
                 child: ElevatedButton(
                   onPressed: () => Navigator.pop(context),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.deepPurple,
+                    backgroundColor: Appcolors.white,
+                    foregroundColor: Appcolors.primaryColor,
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -338,7 +339,7 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
                       style: GoogleFonts.poppins(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: Appcolors.white,
                       ),
                     ),
                     const SizedBox(height: 8),
@@ -362,7 +363,7 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
               child: Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Appcolors.white,
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
@@ -378,13 +379,13 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          colors: [Colors.orange.shade400, Colors.deepOrange],
+                          colors: [Colors.orange.shade400, Appcolors.deeporange],
                         ),
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: const Icon(
+                      child:  Icon(
                         Icons.stars,
-                        color: Colors.white,
+                        color: Appcolors.white,
                         size: 28,
                       ),
                     ),
@@ -459,7 +460,7 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
               child: Container(
                 height: 350,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Appcolors.white,
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
@@ -504,16 +505,16 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
                         ),
                         style: FortuneItemStyle(
                           color: _getColorForIndex(i),
-                          borderColor: Colors.white,
+                          borderColor: Appcolors.white,
                           borderWidth: 3,
                         ),
                       ),
                   ],
-                  indicators: const [
+                  indicators:  [
                     FortuneIndicator(
                       alignment: Alignment.topCenter,
                       child: TriangleIndicator(
-                        color: Colors.deepPurple,
+                        color: Appcolors.primaryColor,
                         width: 30.0,
                         height: 30.0,
                       ),
@@ -540,7 +541,7 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
                         gradient: LinearGradient(
                           colors: isSpinning || remainingSpins == 0
                               ? [Colors.grey.shade400, Colors.grey.shade500]
-                              : [Colors.deepPurple, Colors.purple.shade700],
+                              : [Appcolors.primaryColor, Colors.purple.shade700],
                         ),
                         borderRadius: BorderRadius.circular(30),
                         boxShadow: isSpinning || remainingSpins == 0
@@ -563,12 +564,12 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
                                 ? Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      const SizedBox(
+                                       SizedBox(
                                         width: 20,
                                         height: 20,
                                         child: CircularProgressIndicator(
                                           strokeWidth: 2,
-                                          color: Colors.white,
+                                          color: Appcolors.white,
                                         ),
                                       ),
                                       const SizedBox(width: 12),
@@ -577,7 +578,7 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
                                         style: GoogleFonts.poppins(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.white,
+                                          color: Appcolors.white,
                                           letterSpacing: 1,
                                         ),
                                       ),
@@ -588,7 +589,7 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
                                     style: GoogleFonts.poppins(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.white,
+                                      color: Appcolors.white,
                                       letterSpacing: 1,
                                     ),
                                   ),
@@ -601,32 +602,6 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
               ),
             ),
 
-            const SizedBox(height: 24),
-
-            // Prize List
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Available Prizes",
-                    style: GoogleFonts.poppins(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  ...List.generate(
-                    prizes.take(prizes.length - 3).length,
-                    (index) => _buildPrizeItem(prizeEmojis[index], prizes[index]),
-                  ),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 32),
           ],
         ),
       ),
@@ -638,7 +613,7 @@ class _SpinWheelScreenState extends State<SpinWheelScreen> with TickerProviderSt
       margin: const EdgeInsets.only(bottom: 8),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Appcolors.white,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: Colors.grey.shade200),
       ),

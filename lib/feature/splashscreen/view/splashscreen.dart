@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:spinwheel/feature/commons/colors.dart';
 import 'package:spinwheel/feature/home/view/spinpage.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -103,7 +104,7 @@ class _SplashScreenState extends State<SplashScreen>
             // Floating particles
             ...List.generate(20, (index) => _buildFloatingParticle(index)),
 
-            // Main content
+          
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -117,7 +118,7 @@ class _SplashScreenState extends State<SplashScreen>
                         width: 180,
                         height: 180,
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Appcolors.white,
                           shape: BoxShape.circle,
                           boxShadow: [
                             BoxShadow(
@@ -143,7 +144,7 @@ class _SplashScreenState extends State<SplashScreen>
                                 ),
                               );
                             }),
-                            // Center emoji
+                         
                             Center(
                               child: Text(
                                 '🎡',
@@ -168,7 +169,7 @@ class _SplashScreenState extends State<SplashScreen>
                           style: GoogleFonts.poppins(
                             fontSize: 42,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: Appcolors.white,
                             letterSpacing: 1,
                             shadows: [
                               Shadow(
